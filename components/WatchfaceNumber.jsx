@@ -36,6 +36,7 @@ const WatchfaceNumber = (props) => {
           font-family: monospace;
           font-size: ${units === 'hours' ? '2em' : '1.5em'};
           text-align: center;
+          padding-top: 8px;
         }
 
         .hours_hand {

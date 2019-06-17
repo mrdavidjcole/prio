@@ -13,6 +13,7 @@ export default () => {
         * {
           color: #fff;
           box-sizing: border-box;
+          font-family: monospace;
         }
       `}</style>
     </>

@@ -34,14 +34,21 @@ const ProjectsWatch = (props) => {
         </li>
       </ul>
       <div className='present_line'></div>
+      <div className='present'>PRESENT</div>
+      <div className='past_container'>
+        <div className='past'>&nbsp;PAST&nbsp;</div>
+      </div>
+      <div className='future_container'>
+        <div className='future'>FUTURE</div>
+      </div>
       <div className='disk_container'>
         <div className='hours_disk'>
-          {hours.map(hour => <WatchfaceNumber number={hour} units='hours' />)}
+          {hours.map(hour => <WatchfaceNumber number={hour} units='hours' key={String(hour)} />)}
         </div>
       </div>
       <div className='disk_container'>
         <div className='minutes_disk'>
-          {minutes.map(minute => <WatchfaceNumber number={minute} units='minutes' />)}
+          {minutes.map(minute => <WatchfaceNumber number={minute} units='minutes' key={String(minute)} />)}
         </div>
       </div>
       <style jsx>{`
@@ -52,6 +59,47 @@ const ProjectsWatch = (props) => {
           top: 50%;
           left: 50%;
           transform: translateY(-100%);
+        }
+
+        .present {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(48px) rotate(-90deg);
+        }
+
+        .future_container {
+          height: 240px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateY(-100%) translateX(-50%) rotate(48deg);
+          transform-origin: bottom center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .future {
+          transform: rotate(-90deg) translateX(-50%);
+          flex: 0 0 auto;
+        }
+
+        .past_container {
+          height: 240px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateY(-100%) translateX(-50%) rotate(-48deg);
+          transform-origin: bottom center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .past {
+          transform: rotate(90deg) translateX(50%);
+          flex: 0 0 auto;
         }
 
         .disk_container {
