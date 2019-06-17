@@ -8,7 +8,7 @@ const ProjectsWatch = (props) => {
 
   useInterval(() => {
     setCurrentTime(new Date());
-  }, 100000);
+  }, 1000);
 
   const hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   let minutes = [];
